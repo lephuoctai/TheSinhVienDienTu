@@ -38,7 +38,7 @@
 
 ## 🚀 Cài đặt
 
-1. Tải và cài đặt file APK từ [Releases](https://github.com/yourusername/TheSinhVienDienTu/releases)
+1. Tải và cài đặt file APK từ **[Releases](https://github.com/lephuoctai/TheSinhVienDienTu/releases/latest)**  
 2. Hoặc clone project và build từ source:
    ```bash
    git clone https://github.com/yourusername/TheSinhVienDienTu.git

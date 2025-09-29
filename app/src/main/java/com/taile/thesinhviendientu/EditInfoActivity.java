@@ -76,7 +76,7 @@ public class EditInfoActivity extends AppCompatActivity {
         // If the user is new (no existing info), disable cancel button
         if (!sharedPreferences.contains("name") || !sharedPreferences.contains("studentId")) {
             buttonCancel.setEnabled(false);
-            buttonCancel.setAlpha(0.2f);
+            buttonCancel.setAlpha(0.5f);
         }
         // Cancel button click listener
         buttonCancel.setOnClickListener(new View.OnClickListener() {

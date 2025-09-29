@@ -5,16 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/edit_info_layout"
-    tools:context=".EditInfoActivity">
+    tools:context=".EditInfoActivity"
+    android:background="@drawable/background">
 
     <TextView
         android:id="@+id/textViewEditTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="120dp"
         android:text="Nhập Thông Tin Sinh Viên"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:textColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,9 +27,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="32dp"
         android:hint="Họ và tên"
+        app:boxStrokeColor="@color/accent"
+        app:hintTextColor="@color/accent"
+        android:textColorHint="@color/accent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewEditTitle">
@@ -36,7 +41,8 @@
             android:id="@+id/editTextName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="@color/dark_blue" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -48,6 +54,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:hint="MSSV"
+        app:boxStrokeColor="@color/accent"
+        app:hintTextColor="@color/accent"
+        android:textColorHint="@color/accent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutName">
@@ -56,32 +65,54 @@
             android:id="@+id/editTextStudentId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textColor="@color/dark_blue" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/buttonSave"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="8dp"
-        android:text="Lưu Thông Tin"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:text="Lưu "
+        android:backgroundTint="@color/accent"
+        android:textColor="@android:color/white"
         app:layout_constraintEnd_toStartOf="@+id/buttonCancel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutStudentId" />
 
     <Button
         android:id="@+id/buttonCancel"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
         android:text="Huỷ"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:textColor="@color/accent"
+        app:strokeColor="@color/accent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonSave"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutStudentId" />
+        app:layout_constraintTop_toTopOf="@id/buttonSave" />
 
+    <TextView
+        android:id="@+id/TextViewVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Version: 1.0.1  |  29/09/2025"
+        android:textSize="12sp"
+        android:textColor="@color/dark_blue"
+        android:alpha="0.7"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/background">
 
     <TextView
         android:id="@+id/textViewTitle"
@@ -15,6 +16,7 @@
         android:text="Thẻ Sinh Viên Điện Tử"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:textColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,6 +27,8 @@
         android:layout_height="300dp"
         android:layout_marginTop="32dp"
         android:contentDescription="QR Code"
+        android:background="@android:color/white"
+        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
@@ -38,6 +42,7 @@
         android:layout_marginEnd="32dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
+        app:cardBackgroundColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewQRCode">
@@ -53,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:text="Thông tin sinh viên"
                 android:textSize="18sp"
+                android:textColor="@color/accent"
                 android:textStyle="bold" />
 
             <TextView
@@ -61,6 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Họ và tên: "
+                android:textColor="@color/dark_blue"
                 android:textSize="16sp" />
 
             <TextView
@@ -69,6 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="MSSV: "
+                android:textColor="@color/dark_blue"
                 android:textSize="16sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -77,10 +85,27 @@
         android:id="@+id/buttonEditInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
         android:layout_marginTop="32dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
         android:text="Sửa thông tin"
+        android:backgroundTint="@color/accent"
+        android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
+    <TextView
+        android:id="@+id/TextLicense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TL - Ban Công Nnghệ - FIT - IUH"
+        android:textSize="12sp"
+        android:textColor="@color/dark_blue"
+        android:alpha="0.7"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

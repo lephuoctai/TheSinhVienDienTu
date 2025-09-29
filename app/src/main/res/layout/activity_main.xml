@@ -100,7 +100,7 @@
         android:id="@+id/TextLicense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TL - Ban Công Nnghệ - FIT - IUH"
+        android:text="Ban Công Nnghệ - FIT - IUH"
         android:textSize="12sp"
         android:textColor="@color/dark_blue"
         android:alpha="0.7"

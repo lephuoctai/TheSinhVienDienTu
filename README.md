@@ -36,16 +36,6 @@
 - Hỗ trợ chế độ màn hình dọc
 - Light mode
 
-## 🚀 Cài đặt
-
-1. Tải và cài đặt file APK từ **[Releases](https://github.com/lephuoctai/TheSinhVienDienTu/releases/latest)**  
-2. Hoặc clone project và build từ source:
-   ```bash
-   git clone https://github.com/yourusername/TheSinhVienDienTu.git
-   cd TheSinhVienDienTu
-   ./gradlew installDebug
-   ```
-
 ## 📖 Hướng dẫn sử dụng
 
 1. **Lần đầu sử dụng**: Nhập họ tên và MSSV (đúng 8 chữ số)
@@ -60,6 +50,16 @@
 - **EditInfoActivity**: Nhập và chỉnh sửa thông tin sinh viên
 - **Student**: Đối tượng lưu trữ thông tin sinh viên
 - **StudentManager**: Quản lý thao tác với dữ liệu sinh viên
+
+## 🚀 Cài đặt
+
+1. Tải và cài đặt file APK từ **[Releases](https://github.com/lephuoctai/TheSinhVienDienTu/releases/latest)**  
+2. Hoặc clone project và build từ source:
+   ```bash
+   git clone https://github.com/yourusername/TheSinhVienDienTu.git
+   cd TheSinhVienDienTu
+   ./gradlew installDebug
+   ```
 
 ## 📜 Giấy phép
 

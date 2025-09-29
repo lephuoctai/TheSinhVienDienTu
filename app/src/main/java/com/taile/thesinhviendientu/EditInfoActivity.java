@@ -1,5 +1,7 @@
 package com.taile.thesinhviendientu;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -22,7 +24,7 @@ public class EditInfoActivity extends AppCompatActivity {
 
     private TextInputLayout textInputLayoutName, textInputLayoutStudentId;
     private TextInputEditText editTextName, editTextStudentId;
-    private Button buttonSave;
+    private Button buttonSave, buttonCancel;
     private SharedPreferences sharedPreferences;
 
     // Regular expression pattern for MSSV validation (8 digits only)
@@ -46,6 +48,7 @@ public class EditInfoActivity extends AppCompatActivity {
         editTextName = findViewById(R.id.editTextName);
         editTextStudentId = findViewById(R.id.editTextStudentId);
         buttonSave = findViewById(R.id.buttonSave);
+        buttonCancel = findViewById(R.id.buttonCancel);
 
         // Initialize SharedPreferences
         sharedPreferences = getSharedPreferences("StudentInfo", MODE_PRIVATE);
@@ -69,6 +72,53 @@ public class EditInfoActivity extends AppCompatActivity {
                 }
             }
         });
+
+        // If the user is new (no existing info), disable cancel button
+        if (!sharedPreferences.contains("name") || !sharedPreferences.contains("studentId")) {
+            buttonCancel.setEnabled(false);
+            buttonCancel.setAlpha(0.2f);
+        }
+        // Cancel button click listener
+        buttonCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showCancelConfirmationDialog();
+            }
+        });
+    }
+
+    private void showCancelConfirmationDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Xác nhận huỷ");
+        builder.setMessage("Bạn có chắc chắn muốn huỷ việc chỉnh sửa thông tin không?");
+
+        // Add the buttons
+        builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User clicked Yes
+                navigateBack();
+            }
+        });
+
+        builder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User cancelled the dialog
+                dialog.dismiss();
+            }
+        });
+
+        // Create and show the dialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    private void navigateBack() {
+        // If this is a new user (first time setup), go back to MainActivity
+        if (!sharedPreferences.contains("name") || !sharedPreferences.contains("studentId")) {
+            Intent intent = new Intent(EditInfoActivity.this, MainActivity.class);
+            startActivity(intent);
+        }
+        finish(); // Close this activity
     }
 
     private void setupInputValidation() {
